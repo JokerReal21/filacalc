@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="sticky bottom-0 z-50 w-full border-t border-white/10 bg-white/10 backdrop-blur-md">
@@ -5,6 +7,10 @@ export default function Footer() {
         <span>Filacalc · v1.0</span>
         <span aria-hidden="true" className="opacity-40">·</span>
         <span>Hecho con cariño en Guatemala</span>
+        <span aria-hidden="true" className="opacity-40">·</span>
+        <Link href="/privacy-policy" className="transition-colors hover:text-gray-200">
+          Política de Privacidad
+        </Link>
         <span aria-hidden="true" className="opacity-40">·</span>
 
         {/* PayPal tip button */}
