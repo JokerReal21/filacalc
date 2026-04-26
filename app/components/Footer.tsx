@@ -8,6 +8,10 @@ export default function Footer() {
         <span aria-hidden="true" className="opacity-40">·</span>
         <span>Hecho con cariño en Guatemala</span>
         <span aria-hidden="true" className="opacity-40">·</span>
+        <Link href="/about" className="transition-colors hover:text-gray-200">
+          Acerca de
+        </Link>
+        <span aria-hidden="true" className="opacity-40">·</span>
         <Link href="/privacy-policy" className="transition-colors hover:text-gray-200">
           Política de Privacidad
         </Link>
