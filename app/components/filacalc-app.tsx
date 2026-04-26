@@ -487,6 +487,15 @@ export default function FilacalcApp() {
           </div>
         </div>
         <div className="topbar__actions">
+          <a href="#como-funciona" className="ghost-btn" aria-label="¿Cómo funciona?">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
+                 strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 17v-5" />
+              <path d="M12 8h.01" />
+            </svg>
+            <span>¿Cómo funciona?</span>
+          </a>
           <button
             className="ghost-btn ghost-btn--icon"
             type="button"
@@ -729,6 +738,155 @@ export default function FilacalcApp() {
           </div>
         </div>
       </main>
+
+      {/* ── Sección informativa ───────────────────────────────────────────── */}
+      <section id="como-funciona" style={{ maxWidth: 860, margin: '48px auto 0', scrollMarginTop: 24 }}>
+
+        {/* Encabezado */}
+        <div style={{ marginBottom: 20 }}>
+          <h2 style={{
+            fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 400,
+            letterSpacing: '-0.01em', color: 'var(--ink)', margin: '0 0 6px',
+          }}>
+            ¿Cómo funciona Filacalc?
+          </h2>
+          <p style={{ fontSize: 14.5, color: 'var(--ink-3)', margin: 0 }}>
+            Guía rápida para obtener un costo real y sin sorpresas
+          </p>
+        </div>
+
+        {/* Grid de cards informativas */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 14, marginBottom: 14 }}>
+
+          {/* Card 1 — Cómo usar */}
+          <div className="card">
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+              <div style={{
+                width: 32, height: 32, borderRadius: 8, flexShrink: 0,
+                background: 'var(--accent-soft)', color: 'var(--accent)',
+                display: 'grid', placeItems: 'center', border: '1px solid color-mix(in srgb, var(--accent) 20%, transparent)',
+              }}>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                     strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                </svg>
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 17, fontWeight: 400, color: 'var(--ink)', margin: 0 }}>
+                Paso a paso
+              </h3>
+            </div>
+            <ol style={{ margin: 0, paddingLeft: 18, color: 'var(--ink-2)', fontSize: 13.5, lineHeight: 1.75 }}>
+              <li>Ingresa el <strong style={{ color: 'var(--ink)' }}>peso en gramos</strong> que usa tu modelo (lo da el slicer)</li>
+              <li>Agrega el <strong style={{ color: 'var(--ink)' }}>tiempo de impresión</strong> en horas y minutos</li>
+              <li>Llena el <strong style={{ color: 'var(--ink)' }}>precio del filamento</strong> por kilo</li>
+              <li>Ajusta la <strong style={{ color: 'var(--ink)' }}>tarifa eléctrica</strong> y la potencia de tu impresora</li>
+              <li>Mueve el slider de <strong style={{ color: 'var(--ink)' }}>desperdicio</strong> según tu experiencia</li>
+              <li>Presiona <strong style={{ color: 'var(--ink)' }}>Calcular costo</strong> ✓</li>
+            </ol>
+          </div>
+
+          {/* Card 2 — Cómo funciona el cálculo */}
+          <div className="card">
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+              <div style={{
+                width: 32, height: 32, borderRadius: 8, flexShrink: 0,
+                background: 'var(--accent-2-soft)', color: 'var(--accent-2)',
+                display: 'grid', placeItems: 'center', border: '1px solid color-mix(in srgb, var(--accent-2) 20%, transparent)',
+              }}>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                     strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M13 3 5 13.5h6L10 21l8-10.5h-6L13 3Z" />
+                </svg>
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 17, fontWeight: 400, color: 'var(--ink)', margin: 0 }}>
+                La fórmula
+              </h3>
+            </div>
+            <div style={{ color: 'var(--ink-2)', fontSize: 13.5, lineHeight: 1.75 }}>
+              <p style={{ margin: '0 0 8px' }}>El costo total suma tres componentes:</p>
+              <ul style={{ margin: '0 0 8px', paddingLeft: 18 }}>
+                <li><strong style={{ color: 'var(--ink)' }}>Filamento</strong> = (gramos × factor desperdicio ÷ 1000) × precio/kg</li>
+                <li><strong style={{ color: 'var(--ink)' }}>Energía</strong> = (watts × horas ÷ 1000) × tarifa kWh</li>
+                <li><strong style={{ color: 'var(--ink)' }}>Depreciación</strong> = (costo impresora ÷ vida útil en horas) × horas usadas</li>
+              </ul>
+              <p style={{ margin: 0, fontSize: 12.5, color: 'var(--ink-3)' }}>
+                Todo el cálculo ocurre en tu navegador — ningún dato sale de tu dispositivo.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 14, marginBottom: 32 }}>
+
+          {/* Card 3 — Dónde buscar tarifa kWh */}
+          <div className="card">
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+              <div style={{
+                width: 32, height: 32, borderRadius: 8, flexShrink: 0,
+                background: 'var(--accent-3-soft)', color: 'var(--accent-3)',
+                display: 'grid', placeItems: 'center', border: '1px solid color-mix(in srgb, var(--accent-3) 20%, transparent)',
+              }}>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                     strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M3 9h18M9 21V9" />
+                </svg>
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 17, fontWeight: 400, color: 'var(--ink)', margin: 0 }}>
+                ¿Dónde encuentro el costo del kWh?
+              </h3>
+            </div>
+            <div style={{ color: 'var(--ink-2)', fontSize: 13.5, lineHeight: 1.75 }}>
+              <p style={{ margin: '0 0 8px' }}>Busca en tu <strong style={{ color: 'var(--ink)' }}>recibo de luz</strong> una línea que diga:</p>
+              <ul style={{ margin: '0 0 8px', paddingLeft: 18 }}>
+                <li><em>&ldquo;Tarifa de energía&rdquo;</em> o <em>&ldquo;Cargo por kWh&rdquo;</em></li>
+                <li><em>&ldquo;Precio unitario&rdquo;</em> o <em>&ldquo;Costo por consumo&rdquo;</em></li>
+              </ul>
+              <p style={{ margin: '0 0 6px' }}>
+                En Guatemala la tarifa residencial típica ronda los{' '}
+                <strong style={{ color: 'var(--ink)' }}>Q. 1.80 – Q. 2.40 / kWh</strong>{' '}
+                dependiendo del distribuidor (EEGSA, Energuate) y el rango de consumo mensual.
+              </p>
+              <p style={{ margin: 0, fontSize: 12.5, color: 'var(--ink-3)' }}>
+                Si no tienes el recibo a la mano, Q. 2.00 es un buen punto de partida.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 4 — Dónde buscar potencia de la impresora */}
+          <div className="card">
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+              <div style={{
+                width: 32, height: 32, borderRadius: 8, flexShrink: 0,
+                background: 'var(--surface-2)', color: 'var(--ink-2)',
+                display: 'grid', placeItems: 'center', border: '1px solid var(--line)',
+              }}>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                     strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="6" width="20" height="12" rx="2" />
+                  <path d="M12 12h.01M6 12h.01M18 12h.01" />
+                </svg>
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 17, fontWeight: 400, color: 'var(--ink)', margin: 0 }}>
+                ¿Dónde veo la potencia de mi impresora?
+              </h3>
+            </div>
+            <div style={{ color: 'var(--ink-2)', fontSize: 13.5, lineHeight: 1.75 }}>
+              <p style={{ margin: '0 0 8px' }}>Tienes varias opciones:</p>
+              <ul style={{ margin: '0 0 8px', paddingLeft: 18 }}>
+                <li><strong style={{ color: 'var(--ink)' }}>Etiqueta trasera</strong> de la impresora — busca &ldquo;Input&rdquo; o &ldquo;Max Power&rdquo; en vatios (W)</li>
+                <li><strong style={{ color: 'var(--ink)' }}>Manual o ficha técnica</strong> del fabricante en su sitio web</li>
+                <li><strong style={{ color: 'var(--ink)' }}>Fuente de poder</strong> — el adaptador o fuente suele indicar la potencia máxima</li>
+              </ul>
+              <p style={{ margin: 0, fontSize: 12.5, color: 'var(--ink-3)' }}>
+                Valores típicos: Ender 3 ≈ 270 W · Bambu Lab A1 ≈ 1000 W · Prusa MK4 ≈ 360 W. La impresora no consume su máximo todo el tiempo, el promedio real es un 60–70 %.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
 
       <Footer />
     </div>
