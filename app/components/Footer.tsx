@@ -12,6 +12,10 @@ export default function Footer() {
           Política de Privacidad
         </Link>
         <span aria-hidden="true" className="opacity-40">·</span>
+        <Link href="/contact" className="transition-colors hover:text-gray-200">
+          Contacto
+        </Link>
+        <span aria-hidden="true" className="opacity-40">·</span>
 
         {/* PayPal tip button */}
         <a
